@@ -7,6 +7,15 @@ import classes from './Login.module.css';
 export default function Login() {
   const [enteredEmail, setEnteredEmail] = useState('');
   const [enteredPassword, setEnteredPassword] = useState('');
+
+  const emailChangeHandler = (event) => {
+      setEnteredEmail(event.target.value);
+  };
+
+  const passwordChangeHandler = (event) => {
+    setEnteredPassword(event.target.value);
+  };
+
   return (
     <Card className={classes.login}>
       <form>
@@ -16,6 +25,7 @@ export default function Login() {
             type="email"
             id="email"
             value={enteredEmail}
+            onChange={emailChangeHandler}
           />
         </div>
         <div className={classes.control}>
@@ -24,6 +34,7 @@ export default function Login() {
             type="password"
             id="password"
             value={enteredPassword}
+            onChange={passwordChangeHandler}
           />
         </div>
         <div className={classes.actions}>
